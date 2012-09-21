@@ -1,0 +1,56 @@
+SetType DEFINITIONS ::=
+BEGIN
+    Set1 ::= SET {}
+    set1 Set1 ::= {}
+
+    Set2 ::= SET {
+        item    INTEGER
+    }
+    set2 Set2 ::= {
+        item 100
+    }
+
+    Set3 ::= SET {
+        item1   INTEGER {
+            a(0), b(-5), c(199)
+        },
+        item2   BOOLEAN,
+        item3   REAL,
+        item4   ENUMERATED {
+            a, b, c(5), d
+        },
+        item5   BIT STRING {
+            a(0), b(19), c(2)
+        },
+        item6   OCTET STRING,
+        item7   NULL,
+        item8   SEQUENCE {
+            a       INTEGER,
+            b       REAL,
+            c       BOOLEAN
+        }
+    }
+    set3 Set3 ::= {
+        item4 c,
+        item1 c,
+        item3 3.14e10,
+        item8 {a 100, b 100, c TRUE},
+        item6 'ABCD'H,
+        item7 NULL,
+        item5 '00001111'B,
+        item2 FALSE
+    }
+
+    Set4 ::= SET {
+        abc     INTEGER
+    }
+    Set5 ::= SET {
+        a       REAL OPTIONAL,
+        b       BOOLEAN DEFAULT TRUE,
+        COMPONENTS OF Set4
+    }
+    set5 Set5 ::= {
+        a 0.5e-8,
+        abc 10
+    }
+END

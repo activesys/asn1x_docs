@@ -1,0 +1,156 @@
+Constraint DEFINITIONS ::=
+BEGIN
+    NamesOfMemberNations ::= SEQUENCE OF VisibleString (SIZE(1..64))
+
+    T ::= CHOICE {
+        a SEQUENCE {
+            a INTEGER OPTIONAL,
+            b BOOLEAN
+        },
+        b NULL
+    }
+    V ::= a < T (WITH COMPONENTS {..., a ABSENT})
+END
+
+SingleValue DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    BitString ::= BIT STRING ('0011'B)
+    Boolean ::= BOOLEAN (FALSE)
+    Choice ::= CHOICE {
+        a BitString, b Boolean
+    } (b:FALSE)
+    Enumerated ::= ENUMERATED {a, b, c, d} (c)
+    Integer ::= INTEGER{a(100)}(100)
+    Null ::= NULL(NULL)
+    ObjId ::= OBJECT IDENTIFIER ({itu-t 1 0 100 0})
+    OctString ::= OCTET STRING ('AABBCCDD'H)
+    Real ::= REAL (1e-9)
+    Seq ::= SEQUENCE {
+        a INTEGER, b BOOLEAN
+    } ({a 100, b FALSE})
+    Setof ::= SET ({{a 100, b FALSE}, {a 100, b TRUE}}) OF Seq
+END
+
+ContainedSubtype DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+IMPORTS
+    BitString, Boolean, Choice, Enumerated, Integer, Null, ObjId,
+    OctString, Real, Seq, Setof
+    FROM SingleValue;
+
+    BStr ::= BIT STRING(BitString)
+    NullType ::= NULL(INCLUDES Null)
+    Enum ::= ENUMERATED{a, b, c, d}(Enumerated)
+    Int ::= INTEGER(Integer)
+    ObjID ::= OBJECT IDENTIFIER(ObjId)
+    Oct ::= OCTET STRING(OctString)
+    R ::= REAL (Real)
+    Sequence ::= SEQUENCE{a INTEGER, b BOOLEAN}(INCLUDES Seq)
+    SetOf ::= SET (Setof) OF Seq
+END
+
+ValueRange DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    Int1 ::= INTEGER (0..9)
+    Int2 ::= INTEGER (0<..<9)
+    Int3 ::= INTEGER (MIN .. MAX)
+    int1 Int1 ::= 0
+    int2 Int2 ::= 0
+    int3 Int3 ::= 0
+
+    Real1 ::= REAL (0.0 .. 9.9)
+    Real2 ::= REAL (0.0< .. <9.9)
+    Real3 ::= REAL (MIN .. MAX)
+    real1 Real1 ::= 0.0
+    real2 Real2 ::= 0.0
+    real3 Real3 ::= 0.0
+END
+
+SizeConstraint DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+IMPORTS
+    Integer, Boolean
+    FROM SingleValue;
+
+    BS1 ::= BIT STRING (SIZE(1))
+    BS2 ::= BIT STRING (SIZE(1..2))
+    BS3 ::= BIT STRING (SIZE(INCLUDES INT))
+    INT ::= INTEGER (0<..<9)
+
+    SEQ1 ::= SEQUENCE (SIZE(9)) OF INTEGER
+    SEQ2 ::= SEQUENCE SIZE(9) OF INTEGER
+    SEQ3 ::= SEQUENCE (SIZE(MIN< .. <MAX)) OF BOOLEAN
+    SEQ4 ::= SEQUENCE SIZE (MIN .. MAX) OF BOOLEAN
+
+    SET1 ::= SET (SIZE(0)) OF item1 REAL
+    SET2 ::= SET SIZE(9) OF item2 REAL
+END
+
+InnerTypeConstraints DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    Text-block ::= SEQUENCE OF VisibleString
+    Address ::= Text-block (SIZE(1..6))(WITH COMPONENT (SIZE(1..32)))
+    -- Address ::= SEQUENCE SIZE(1..6) OF VisibleString (WITH COMPONENT (SIZE(1..32)))
+
+    Seq ::= SEQUENCE {
+        a INTEGER,
+        b BOOLEAN,
+        e ENUMERATED {a, b, c, d}
+    } (WITH COMPONENTS {a (0<..100), b (FALSE), e (a)})
+    Set ::= SET {
+        a INTEGER OPTIONAL,
+        b BOOLEAN OPTIONAL,
+        e ENUMERATED {a, b, c, d} OPTIONAL
+    } (WITH COMPONENTS {
+        a (1<..MAX) ABSENT,
+        b (FALSE) PRESENT,
+        e (b) OPTIONAL
+    })
+
+    Cho ::= CHOICE {
+        a INTEGER,
+        b BOOLEAN,
+        e ENUMERATED {a, b, c, d}
+    } (WITH COMPONENTS {
+        ...,
+        a PRESENT,
+        b ABSENT
+    })
+END
+
+PatternConstraints DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    IA5 ::= IA5String (PATTERN "[0-9]#(10,20)")
+END
+
+ExtendedConstraint DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    Int1 ::= INTEGER (0<..<9)
+    Int2 ::= INTEGER (0<..<9, ...)
+    Int3 ::= INTEGER (0<..<9, ..., 100<..<200)
+END
+
+SetOperation DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    Int1 ::= INTEGER (ALL EXCEPT 0..9)
+    Int2 ::= INTEGER (0 | 1 | 2 | 3)
+    Int3 ::= INTEGER (0 | 10..20 ^ 15..50)
+    Int4 ::= INTEGER (0 | 10..20 EXCEPT 15)
+END
+

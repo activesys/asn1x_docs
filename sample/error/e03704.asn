@@ -1,0 +1,5 @@
+E03704 DEFINITIONS ::=
+BEGIN
+    pstr1 PrintableString ::= "[]~!@#$%^&*" -- E03704
+    pstr2 PrintableString ::= "<>;|"        -- E03704
+END

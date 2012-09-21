@@ -1,0 +1,8 @@
+E02811 DEFINITIONS ::=
+BEGIN
+    cho CHOICE {        -- E02811
+        a   INTEGER,
+        b   NULL,
+        c   BIT STRING
+    } ::= item : 100
+END

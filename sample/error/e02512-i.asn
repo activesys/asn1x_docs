@@ -1,0 +1,5 @@
+E02512-I DEFINITIONS ::=
+BEGIN
+    SeqOf ::= SEQUENCE OF INTEGER
+    seqof SeqOf ::= {int 0, int 1}  -- E02512-I
+END

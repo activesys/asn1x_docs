@@ -1,0 +1,4 @@
+E01804-I DEFINITIONS ::=
+BEGIN
+    INT ::= INTEGER {a(1), b(n)} -- E01804-I
+END

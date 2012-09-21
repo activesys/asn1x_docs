@@ -1,0 +1,15 @@
+SequenceOfType DEFINITIONS ::=
+BEGIN
+    SeqOf1 ::= SEQUENCE OF INTEGER
+    seqof11 SeqOf1 ::= {}
+    seqof12 SeqOf1 ::= {1, 2, 3, 4}
+
+    SeqOf2 ::= SEQUENCE OF int INTEGER
+    seqof21 SeqOf2 ::= {}
+    seqof22 SeqOf2 ::= {int 1, int 2, int 3}
+
+    Int ::= INTEGER
+    SeqOf3 ::= SEQUENCE OF Int
+    seqof31 SeqOf3 ::= {}
+    seqof32 SeqOf3 ::= {10, 11, 12}
+END

@@ -1,0 +1,29 @@
+SelectionType DEFINITIONS ::=
+BEGIN
+    Cho ::= CHOICE {
+        a   INTEGER,
+        b   NULL,
+        c   REAL,
+        d   BIT STRING
+    }
+
+    SelInt  ::= a < Cho
+    SelNull ::= b < Cho
+    SelReal ::= c < Cho
+    SelBS   ::= d < Cho
+
+    selint SelInt ::= 100
+    selnull SelNull ::= NULL
+    selreal SelReal ::= 10.98
+    selbs SelBS ::= 'AC190D'H
+
+    int a < Cho ::= 190
+
+    set SET {
+        a a < Cho,
+        b b < Cho
+    } ::= {
+        a 100,
+        b NULL
+    }
+END

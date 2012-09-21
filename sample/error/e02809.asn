@@ -1,0 +1,8 @@
+E02809 DEFINITIONS ::=
+BEGIN
+    Cho ::= CHOICE {        -- E02809
+        item    INTEGER,
+        item    REAL,
+        item    BIT STRING
+    }
+END

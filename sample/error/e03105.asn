@@ -1,0 +1,9 @@
+E03105 DEFINITIONS ::=
+BEGIN
+    roid RELATIVE-OID ::= {
+        1 0 1
+    }
+    objid OBJECT IDENTIFIER ::= {   -- E03105
+        roid pic(1)
+    }
+END

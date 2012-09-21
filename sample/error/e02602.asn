@@ -1,0 +1,8 @@
+E02602 DEFINITIONS ::=
+BEGIN
+    Set ::= SET {
+        item1   INTEGER,
+        item2   REAL,
+        COMPONENTS OF BOOLEAN   -- E02602
+    }
+END

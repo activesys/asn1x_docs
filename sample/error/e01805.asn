@@ -1,0 +1,5 @@
+E01805 DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 1
+    INT ::= INTEGER {abc(a), def(1)} -- E01805
+END

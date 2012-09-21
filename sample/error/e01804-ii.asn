@@ -1,0 +1,5 @@
+E01804-II DEFINITIONS ::=
+BEGIN
+    bvar BOOLEAN ::= TRUE
+    INT ::= INTEGER {a(0), b(bvar)} -- E01804-II
+END

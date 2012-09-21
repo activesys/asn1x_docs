@@ -1,0 +1,8 @@
+E02608 DEFINITIONS ::=
+BEGIN
+    Set ::= SET {
+        item1   INTEGER,
+        item2   BOOLEAN
+    }
+    set Set ::= {}  -- E02608
+END

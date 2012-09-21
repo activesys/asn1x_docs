@@ -1,0 +1,7 @@
+E02803 DEFINITIONS ::=
+BEGIN
+    Cho ::= CHOICE {
+        item1   INTEGER,
+        item2   INTEGER     -- E02803
+    }
+END

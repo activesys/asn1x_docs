@@ -1,0 +1,4 @@
+E01902-I DEFINITIONS ::=
+BEGIN
+    Enum1 ::= ENUMERATED {a(0), a(1)} -- E01902-I
+END

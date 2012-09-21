@@ -1,0 +1,4 @@
+E02512-II DEFINITIONS ::=
+BEGIN
+    seqof SEQUENCE OF INTEGER ::= {0., 1., 2., 3.}  -- E02512-II
+END

@@ -1,0 +1,7 @@
+E02411 DEFINITIONS ::=
+BEGIN
+    val INTEGER ::= 1
+    Seq ::= SEQUENCE {
+        item    BOOLEAN DEFAULT val -- E02411
+    }
+END

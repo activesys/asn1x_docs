@@ -1,0 +1,50 @@
+First DEFINITIONS ::=
+BEGIN
+EXPORTS
+    first;
+
+    first INTEGER ::= 100
+END
+
+Second {itu-t 1 0 100 2}
+DEFINITIONS ::=
+BEGIN
+EXPORTS
+    ALL;
+
+    second REAL ::= 3.14
+END
+
+Third {itu-t 1 0 100 3}
+DEFINITIONS ::=
+BEGIN
+    third BOOLEAN ::= TRUE
+    objid3 OBJECT IDENTIFIER ::= {itu-t 1 0 100 3}
+END
+
+Fourth {itu-t 1 0 100 4}
+DEFINITIONS ::=
+BEGIN
+    fourth NULL ::= NULL
+END
+
+Imports DEFINITIONS ::=
+BEGIN
+IMPORTS
+    first
+    FROM First
+    second
+    FROM Second {itu-t 1 0 100 2}
+    third,
+    objid3
+    FROM Third objid3
+    fourth
+    FROM Dumy objid4;
+
+    myInt INTEGER ::= first
+    myReal REAL ::= second
+    myBool BOOLEAN ::= third
+    myNull NULL ::= fourth 
+    objid4 OBJECT IDENTIFIER ::= {itu-t 1 0 100 4}
+END
+

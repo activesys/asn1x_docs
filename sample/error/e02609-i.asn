@@ -1,0 +1,10 @@
+E02609-I DEFINITIONS ::=
+BEGIN
+    set SET {           -- E02609-I
+        item1 INTEGER,
+        item2 REAL,
+        item3 NULL
+    } ::= {
+        item1 100
+    }
+END

@@ -1,0 +1,6 @@
+E02705-I DEFINITIONS ::=
+BEGIN
+    setof SET OF int INTEGER ::= {  -- E02705-I
+        100, 200, 300, 400
+    }
+END

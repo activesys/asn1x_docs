@@ -1,0 +1,6 @@
+NumericStringType DEFINITIONS ::=
+BEGIN
+    NumString ::= NumericString
+    numstr1 NumString ::= "0123456789 9876543210"
+    numstr2 NumericString ::= {"0", "1", "3", "0"}
+END

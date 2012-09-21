@@ -1,0 +1,8 @@
+E02103 DEFINITIONS ::=
+BEGIN
+    realval REAL ::= 20
+    BS1 ::= BIT STRING {a(realval)} -- E02103
+
+    intval INTEGER ::= -5
+    BS2 ::= BIT STRING {a(intval)}  -- E02103
+END

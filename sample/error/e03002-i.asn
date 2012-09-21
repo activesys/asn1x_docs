@@ -1,0 +1,7 @@
+E03002-I DEFINITIONS
+::=
+BEGIN
+    Int ::= [10.4] INTEGER      -- E03002-I
+    bval BOOLEAN = TRUE
+    Bool ::= [bval] BOOLEAN     -- E03002-I
+END

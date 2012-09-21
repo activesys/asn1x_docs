@@ -1,0 +1,15 @@
+ObjID DEFINITIONS ::=
+BEGIN
+    id INTEGER ::= 99
+    objbase OBJECT IDENTIFIER ::= {
+        iso standard 8571
+    }
+    rid RELATIVE-OID ::= {
+        1 2 3
+    }
+    ObjID ::= OBJECT IDENTIFIER
+    objid ObjID ::= {
+        objbase abc (1) id rid
+    }
+END
+

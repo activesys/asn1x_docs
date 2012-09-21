@@ -1,0 +1,134 @@
+SequenceType DEFINITIONS ::=
+BEGIN
+    Seq1 ::= SEQUENCE {}
+    seq1 Seq1 ::= {}
+
+    Seq2 ::= SEQUENCE {
+        item    INTEGER
+    }
+    seq2 Seq2 ::= {
+        item 100
+    }
+
+    Seq3 ::= SEQUENCE {
+        item1   INTEGER {
+            a(0), b(-5), c(199)
+        },
+        item2   BOOLEAN,
+        item3   REAL,
+        item4   ENUMERATED {
+            a, b, c(5), d
+        },
+        item5   BIT STRING {
+            a(0), b(19), c(2)
+        },
+        item6   OCTET STRING,
+        item7   NULL
+    }
+    seq3 Seq3 ::= {
+        item1 c,
+        item2 FALSE,
+        item3 3.14e10,
+        item4 c,
+        item5 '00001111'B,
+        item6 'ABCD'H,
+        item7 NULL
+    }
+
+    Seq4 ::= SEQUENCE {
+        abc     INTEGER
+    }
+    Seq5 ::= SEQUENCE {
+        a       REAL OPTIONAL,
+        b       BOOLEAN DEFAULT TRUE,
+        COMPONENTS OF Seq4
+    }
+    seq5 Seq5 ::= {
+        a 0.5e-8,
+        abc 10
+    }
+
+    Seq6 ::= SEQUENCE {...}
+    Seq7 ::= SEQUENCE {..., ...}
+    Seq8 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...
+    }
+    Seq9 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        ...
+    }
+    Seq10 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        e   ENUMERATED {a, b, c, d},
+        r   REAL,
+        ...
+    }
+    Seq11 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        e   ENUMERATED {a, b, c, d},
+        [[
+            r   REAL,
+            n   NULL
+        ]],
+        [[--99:
+            bs  BIT STRING,
+            os  OCTET STRING
+        ]],
+        ...
+    }
+    Seq12 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        e   ENUMERATED {a, b, c, d},
+        ...,
+        bs  BIT STRING,
+        os  OCTET STRING
+    }
+    Seq13 ::= SEQUENCE {
+        ...,
+        a   INTEGER,
+        ...,
+        b   BOOLEAN
+    }
+    Seq14 ::= SEQUENCE {
+        ...,
+        a   INTEGER,
+        ...
+    }
+    Seq15 ::= SEQUENCE {
+        ...,
+        a   INTEGER
+    }
+
+    Seq16 ::= SEQUENCE {
+        ... !0
+    }
+    Seq17 ::= SEQUENCE {
+        ... !1,
+        ...
+    }
+    Seq18 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ... !100,
+        r   REAL
+    }
+    Seq19 ::= SEQUENCE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ... ! CHOICE {
+            item1   BIT STRING,
+            item2   OCTET STRING
+        } : item1 : '110011'B,
+        r   REAL
+    }
+END

@@ -1,0 +1,10 @@
+CString DEFINITIONS ::=
+BEGIN
+    cs1 IA5String ::= "Hello World!"
+    cs2 IA5String ::= "  Hello      World!"
+    cs3 IA5String ::= "
+Hello
+                                World !"
+    cs4 IA5String ::= " ""   "
+    cs5 IA5String ::= ""
+END

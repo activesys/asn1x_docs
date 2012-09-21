@@ -1,0 +1,12 @@
+First DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 100
+END
+
+E01215-AI DEFINITIONS ::=
+BEGIN
+IMPORTS
+    a, a            -- E01215-AI
+    FROM First;
+END
+

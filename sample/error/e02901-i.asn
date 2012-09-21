@@ -1,0 +1,8 @@
+E02901-I DEFINITIONS ::=
+BEGIN
+    Int ::= a < SEQUENCE {  -- E02901-I
+        a   INTEGER,
+        b   NULL,
+        c   REAL
+    }
+END

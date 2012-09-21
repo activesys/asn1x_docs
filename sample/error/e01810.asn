@@ -1,0 +1,8 @@
+E01810 DEFINITIONS ::=
+BEGIN
+    INT ::= INTEGER {a(0), b(1), c(2)}
+    intvar INTEGER ::= abc  -- E01810
+    int INT ::= d           -- E01810
+    int2 INTEGER ::= a      -- E01810
+    int3 INT ::= c
+END

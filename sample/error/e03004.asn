@@ -1,0 +1,8 @@
+E03004 DEFINITIONS ::=
+BEGIN
+    MyType ::= [UNIVERSAL 999] SEQUENCE {   -- E03004
+        item1   INTEGER,
+        item2   REAL,
+        item3   BOOLEAN
+    }
+END

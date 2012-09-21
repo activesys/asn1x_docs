@@ -1,0 +1,7 @@
+E03104-II DEFINITIONS ::=
+BEGIN
+    id INTEGER ::= -5
+    obj OBJECT IDENTIFIER ::= { -- E03104-II
+        iso 0 1 id
+    }
+END

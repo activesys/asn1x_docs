@@ -1,0 +1,5 @@
+E03702 DEFINITIONS ::=
+BEGIN
+    str1 NumericString ::= "abc"    -- E03702
+    str2 NumericString ::= {"X", "Y", "Z"}  -- E03702
+END

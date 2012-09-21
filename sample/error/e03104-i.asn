@@ -1,0 +1,7 @@
+E03104-I DEFINITIONS ::=
+BEGIN
+    id REAL ::= 90
+    obj OBJECT IDENTIFIER ::= { -- E03104-I
+        iso 0 8751 id
+    }
+END

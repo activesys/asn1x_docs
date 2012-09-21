@@ -1,0 +1,6 @@
+E03107 DEFINITIONS ::=
+BEGIN
+    obj OBJECT IDENTIFIER ::= { -- E03107
+        iso 0 1 id
+    }
+END

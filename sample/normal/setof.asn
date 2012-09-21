@@ -1,0 +1,15 @@
+SetOfType DEFINITIONS ::=
+BEGIN
+    SetOf1 ::= SET OF INTEGER
+    setof11 SetOf1 ::= {}
+    setof12 SetOf1 ::= {1, 2, 3, 4}
+
+    SetOf2 ::= SET OF int INTEGER
+    setof21 SetOf2 ::= {}
+    setof22 SetOf2 ::= {int 1, int 2, int 3}
+
+    Int ::= INTEGER
+    SetOf3 ::= SET OF Int
+    setof31 SetOf3 ::= {}
+    setof32 SetOf3 ::= {10, 11, 12}
+END

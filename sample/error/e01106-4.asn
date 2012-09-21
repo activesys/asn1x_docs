@@ -1,0 +1,18 @@
+E01106-4 DEFINITIONS ::=
+BEGIN
+	/*
+		/*
+		*/
+	*/
+	Extra Comment End.
+	*/
+	ExtraCommentEnd ::= NULL
+
+	/*
+	Extra Comment Begin.
+	/*
+		/*
+		*/
+	*/
+	ExtraCommentBegin ::= NULL
+END

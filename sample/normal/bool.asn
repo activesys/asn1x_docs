@@ -1,0 +1,6 @@
+Boolean DEFINITIONS ::=
+BEGIN
+    MyBool ::= BOOLEAN
+    bVar1 BOOLEAN ::= TRUE
+    bVar2 BOOLEAN ::= FALSE
+END

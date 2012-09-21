@@ -1,0 +1,6 @@
+E02704-II DEFINITIONS ::=
+BEGIN
+    setof SET OF INTEGER ::= {  -- E02704-II
+        FALSE, 0.9, 'AC'H
+    }
+END

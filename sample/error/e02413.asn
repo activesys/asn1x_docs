@@ -1,0 +1,13 @@
+E02413 DEFINITIONS ::=
+BEGIN
+    Seq1 ::= SEQUENCE {
+        item    INTEGER,
+        item    REAL        -- E02413
+    }
+    Seq2 ::= SEQUENCE {
+        item    INTEGER,
+        COMPONENTS OF SEQUENCE {
+            item    REAL
+        }                   -- E02413
+    }
+END

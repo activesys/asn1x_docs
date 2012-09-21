@@ -1,0 +1,15 @@
+First DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 100
+    b REAL ::= 3.14
+END
+
+E01215-AII DEFINITIONS ::=
+BEGIN
+IMPORTS
+    a, b            -- E01215-AII
+    FROM First;
+
+    a INTEGER ::= 100
+    b BOOLEAN ::= TRUE
+END

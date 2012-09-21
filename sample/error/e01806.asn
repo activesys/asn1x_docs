@@ -1,0 +1,4 @@
+E01806 DEFINITIONS ::=
+BEGIN
+    INT ::= INTEGER {abc(1), abc(2)}    -- E01806
+END

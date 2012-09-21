@@ -1,0 +1,6 @@
+E02513-I DEFINITIONS ::=
+BEGIN
+    seqof SEQUENCE OF int INTEGER ::= { -- E02513-I
+        1, 2, 3, 4
+    }
+END

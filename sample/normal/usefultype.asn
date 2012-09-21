@@ -1,0 +1,9 @@
+UsefulType DEFINITIONS ::=
+BEGIN
+    gtime1 GeneralizedTime ::= "19830518121922.3"
+    gtime2 GeneralizedTime ::= "19830518121922.3Z"
+    gtime3 GeneralizedTime ::= "19830518121922.3+0800"
+
+    utime1 UTCTime ::= "8305181219Z"
+    utime2 UTCTime ::= "8305181219+0800"
+END

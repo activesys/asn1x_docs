@@ -1,0 +1,21 @@
+First DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 100
+END
+
+Second DEFINITIONS ::=
+BEGIN
+    a REAL ::= 100.0
+END
+
+E01212-AII DEFINITIONS ::=
+BEGIN
+EXPORTS
+    a;
+IMPORTS
+    a
+    FROM First
+    a
+    FROM Second;
+END
+

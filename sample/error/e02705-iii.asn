@@ -1,0 +1,6 @@
+E02705-III DEFINITIONS ::=
+BEGIN
+    setof SET OF int INTEGER ::= {  -- E02705-III
+        int 100, int 100.0, int NULL
+    }
+END

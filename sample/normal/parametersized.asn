@@ -1,0 +1,14 @@
+Parametersized
+DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    PARAMETERIZED-OBJECT-CLASS {TypeParam, INTEGER : valueParam, INTEGER : ValueSetParam} ::= CLASS {
+        &valueField1    TypeParam,
+        &valueField2    INTEGER DEFAULT valueParam,
+        &valueField3    INTEGER (ValueSetParam),
+        &ValueSetField  INTEGER DEFAULT {ValueSetParam}
+    }
+
+    MY-OBJECT-CLASS ::= PARAMETERIZED-OBJECT-CLASS {BIT STRING, 123, {4|5|6}}
+END

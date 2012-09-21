@@ -1,0 +1,4 @@
+E02105 DEFINITIONS ::=
+BEGIN
+    BS ::= BIT STRING {a(0), a(1)}  -- E02105
+END

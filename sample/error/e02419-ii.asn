@@ -1,0 +1,9 @@
+E02419-II DEFINITIONS ::=
+BEGIN
+    seq SEQUENCE {      -- E02419-II
+        item1   INTEGER,
+        item2   BOOLEAN
+    } ::= {
+        item1   100
+    }
+END

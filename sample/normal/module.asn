@@ -1,0 +1,19 @@
+Module {itu-t 1 90 mymodule(100)}
+DEFINITIONS
+EXPLICIT TAGS
+EXTENSIBILITY IMPLIED
+::=
+BEGIN
+    MyInt ::= INTEGER
+    MySeq ::= SEQUENCE {
+        item1   INTEGER,
+        item2   ENUMERATED {a, b, c, d},
+        item3   SEQUENCE OF CHOICE {
+            a   INTEGER,
+            b   REAL,
+            c   NULL,
+            d   BOOLEAN
+        }
+    }
+END
+

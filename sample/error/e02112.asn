@@ -1,0 +1,5 @@
+E02112 DEFINITIONS ::=
+BEGIN
+    BS ::= BIT STRING {a(0), b(1), c(2), d(3)}
+    bs BS ::= {b, e}   -- E02112
+END

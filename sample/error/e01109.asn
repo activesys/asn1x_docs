@@ -1,0 +1,6 @@
+E01109 DEFINITIONS ::=
+BEGIN
+    real0   REAL ::= 03.1   -- E01109
+    real1   REAL ::= 03     -- E01109
+    real2   REAL ::= 3.1e05 -- E01109
+END

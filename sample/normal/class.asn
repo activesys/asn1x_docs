@@ -1,0 +1,196 @@
+ClassDefinition DEFINITIONS AUTOMATIC TAGS::=
+BEGIN
+    OPERATION ::= CLASS {
+        &ArgumentType       OPTIONAL,
+        &ResultType         OPTIONAL,
+        &Errors             ERROR OPTIONAL,
+        &Linked             OPERATION OPTIONAL,
+        &resultReturned     BOOLEAN DEFAULT TRUE,
+        &code               INTEGER UNIQUE
+    }
+    ERROR ::= CLASS {
+        &ParameterType      OPTIONAL,
+        &code               INTEGER UNIQUE
+    }
+    determinatIsZero ERROR ::= {
+        &code               1
+    }
+
+    MY-EXAMPLE ::= CLASS {
+        &TypeField1,
+        &TypeField2                     OPTIONAL,
+        &TypeField3                     DEFAULT BOOLEAN,
+
+        &fixedTypeValueField1           INTEGER,
+        &fixedTypeValueField2           REAL UNIQUE,
+        &fixedTypeValueField3           BOOLEAN OPTIONAL,
+        &fixedTypeValueField4           BIT STRING DEFAULT '45A3'H,
+
+        &variableTypeValueField1        &TypeField1,
+        &variableTypeValueField2        &TypeField2 OPTIONAL,
+        &variableTypeValueField3        &TypeField3 DEFAULT FALSE,
+
+        &FixedTypeValueSetField1        INTEGER,
+        &FixedTypeValueSetField2        BOOLEAN OPTIONAL,
+        &FixedTypeValueSetField3        OCTET STRING DEFAULT {SIZE(1..9)},
+
+        &VariableTypeValueSetField1     &TypeField1,
+        &VariableTypeValueSetField2     &TypeField2 OPTIONAL,
+        &VariableTypeValueSetField3     &TypeField3 DEFAULT {FALSE},
+
+        &objectField1                   ERROR,
+        &objectField2                   ERROR OPTIONAL,
+        &objectField3                   ERROR DEFAULT determinatIsZero,
+
+        &ObjectSetField1                ERROR,
+        &ObjectSetField2                ERROR OPTIONAL,
+        &ObjectSetField3                ERROR DEFAULT {determinatIsZero}
+    }
+/*
+    my-example MY-EXAMPLE ::= {
+        &TypeField1                     INTEGER,
+        &TypeField2                     BIT STRING,
+        &TypeField3                     BOOLEAN,
+
+        &fixedTypeValueField1           1,
+        &fixedTypeValueField2           3.14,
+        &fixedTypeValueField3           FALSE,
+        &fixedTypeValueField4           '9999'H,
+
+        &variableTypeValueField1        100,
+        &variableTypeValueField2        '1100110101'B,
+        &variableTypeValueField3        TRUE,
+
+        &FixedTypeValueSetField1        {0< .. <100},
+        &FixedTypeValueSetField2        {FALSE | TRUE},
+        &FixedTypeValueSetField3        {SIZE(1)},
+
+        &VariableTypeValueSetField1     {MIN .. MAX},
+        &VariableTypeValueSetField2     {SIZE(100)},
+        &VariableTypeValueSetField3     {FALSE},
+
+        &objectField1                   determinatIsZero,
+
+        &ObjectSetField1                {determinatIsZero}
+    }
+*/
+
+      WITH SYNTAX {
+        TYPEFIELD-A                     &TypeField1
+        [TYPEFIELD-B                    &TypeField2]
+        [TYPEFIELD-C                    &TypeField3]
+
+        FIXEDTYPEVALUEFIELD-A           &fixedTypeValueField1
+        FIXEDTYPEVALUEFIELD-B           &fixedTypeValueField2
+        [FIXEDTYPEVALUEFIELD-C          &fixedTypeValueField3]
+        [FIXEDTYPEVALUEFIELD-D          &fixedTypeValueField4]
+
+        VARIABLETYPEVALUEFIELD-A        &variableTypeValueField1
+        [VARIABLETYPEVALUEFIELD-B       &variableTypeValueField2]
+        [VARIABLETYPEVALUEFIELD-C       &variableTypeValueField3]
+
+        FIXEDTYPEVALUESETFIELD-A        &FixedTypeValueSetField1
+        [FIXEDTYPEVALUESETFIELD-B       &FixedTypeValueSetField2]
+        [FIXEDTYPEVALUESETFIELD-C       &FixedTypeValueSetField3]
+
+        VARIABLETYPEVALUESETFIELD-A     &VariableTypeValueSetField1
+        [VARIABLETYPEVALUESETFIELD-B    &VariableTypeValueSetField2]
+        [VARIABLETYPEVALUESETFIELD-C    &VariableTypeValueSetField3]
+
+        OBJECTFIELD-A                   &objectField1
+        [OBJECTFIELD-B                  &objectField2]
+        [OBJECTFIELD-C                  &objectField3]
+
+        OBJECTSETFIELD-A                &ObjectSetField1
+        [OBJECTSETFIELD-B               &ObjectSetField2]
+        [OBJECTSETFIELD-C               &ObjectSetField3]
+    }
+
+    my-example MY-EXAMPLE ::= {
+        TYPEFIELD-A                     MyEnu
+        TYPEFIELD-B                     MySeq
+        TYPEFIELD-C                     CHOICE {m BIT STRING, n OCTET STRING}
+
+        FIXEDTYPEVALUEFIELD-A           1
+        FIXEDTYPEVALUEFIELD-B           3.14
+        FIXEDTYPEVALUEFIELD-C           FALSE
+        FIXEDTYPEVALUEFIELD-D           '1101'B
+
+        VARIABLETYPEVALUEFIELD-A        a
+        VARIABLETYPEVALUEFIELD-B        {x 100, y TRUE, z 2.8}
+        VARIABLETYPEVALUEFIELD-C        n : '4455'H
+
+        FIXEDTYPEVALUESETFIELD-A        {ALL EXCEPT (100 .. 200)}
+        FIXEDTYPEVALUESETFIELD-B        {TRUE | FALSE}
+        FIXEDTYPEVALUESETFIELD-C        {SIZE(100 .. 200)}
+
+        VARIABLETYPEVALUESETFIELD-A     {a | b | d}
+        VARIABLETYPEVALUESETFIELD-B     {{x 100, y FALSE, z 10.1}}
+        VARIABLETYPEVALUESETFIELD-C     {m : '1111'B | n : '1111'B}
+
+        OBJECTFIELD-A                   determinatIsZero
+
+        OBJECTSETFIELD-A                {determinatIsZero}
+    }
+
+    MyEnu ::= ENUMERATED {a, b, c, d}
+    MySeq ::= SEQUENCE {x INTEGER, y BOOLEAN, z REAL}
+
+    my-example-1 MY-EXAMPLE ::= {
+        TYPEFIELD-A                     INTEGER
+        FIXEDTYPEVALUEFIELD-A           1
+        FIXEDTYPEVALUEFIELD-B           3.14
+        VARIABLETYPEVALUEFIELD-A        1
+        FIXEDTYPEVALUESETFIELD-A        {1}
+        VARIABLETYPEVALUESETFIELD-A     {1}
+        OBJECTFIELD-A                   determinatIsZero
+        OBJECTSETFIELD-A                {determinatIsZero}
+    }
+    my-example-2 MY-EXAMPLE ::= {
+        TYPEFIELD-A                     INTEGER
+        FIXEDTYPEVALUEFIELD-A           2
+        FIXEDTYPEVALUEFIELD-B           3.14
+        VARIABLETYPEVALUEFIELD-A        2
+        FIXEDTYPEVALUESETFIELD-A        {2}
+        VARIABLETYPEVALUESETFIELD-A     {2}
+        OBJECTFIELD-A                   determinatIsZero
+        OBJECTSETFIELD-A                {determinatIsZero}
+    }
+    my-example-3 MY-EXAMPLE ::= {
+        TYPEFIELD-A                     INTEGER
+        FIXEDTYPEVALUEFIELD-A           3
+        FIXEDTYPEVALUEFIELD-B           3.14
+        VARIABLETYPEVALUEFIELD-A        3
+        FIXEDTYPEVALUESETFIELD-A        {3}
+        VARIABLETYPEVALUESETFIELD-A     {3}
+        OBJECTFIELD-A                   determinatIsZero
+        OBJECTSETFIELD-A                {determinatIsZero}
+    }
+
+    My-Example-Set-1 MY-EXAMPLE ::= {my-example-1}
+    My-Example-Set-2 MY-EXAMPLE ::= {my-example-1 | my-example-2}
+    My-Example-Set-3 MY-EXAMPLE ::= {my-example-1, ...}
+    My-Example-Set-4 MY-EXAMPLE ::= {my-example-1, ..., my-example-2}
+    My-Example-Set-5 MY-EXAMPLE ::= {...}
+    My-Example-Set-6 MY-EXAMPLE ::= {..., my-example-2 | my-example-3}
+
+    Seq ::= SEQUENCE {
+        item1       MY-EXAMPLE.&TypeField1,
+        item2       MY-EXAMPLE.&fixedTypeValueField1,
+        item3       MY-EXAMPLE.&variableTypeValueField1,
+        item4       MY-EXAMPLE.&FixedTypeValueSetField1,
+        item5       MY-EXAMPLE.&VariableTypeValueSetField1,
+        item6       MY-EXAMPLE.&objectField1.&ParameterType,
+        item7       MY-EXAMPLE.&ObjectSetField3.&code
+    }
+
+    seq Seq ::= {
+        item1       INTEGER : 100,
+        item2       100,
+        item3       REAL : 3.14,
+        item4       200,
+        item5       BOOLEAN : FALSE,
+        item6       OCTET STRING : 'AA'H,
+        item7       100
+    }
+END

@@ -1,0 +1,7 @@
+E03008 DEFINITIONS ::=
+BEGIN
+    MyChoice ::= [0] IMPLICIT CHOICE {  -- E03008
+        a   INTEGER,
+        b   BOOLEAN
+    }
+END

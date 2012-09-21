@@ -1,0 +1,11 @@
+First {itu-t 1 100 1}
+DEFINITIONS ::=
+BEGIN
+    MyInt ::= INTEGER
+END
+
+Second {itu-t 1 100 1}  -- E01207
+DEFINITIONS ::=
+BEGIN
+    MyReal ::= REAL
+END

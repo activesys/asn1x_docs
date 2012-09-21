@@ -1,0 +1,10 @@
+PrintableStringType DEFINITIONS ::=
+BEGIN
+    PrintStr ::= PrintableString
+    pstr1 PrintStr ::= "1234567890"
+    pstr2 PrintableString ::= "abcdefghijklm
+                               nopqrstuvwxyz"
+    pstr3 PrintableString ::= "ABCDEFGHIJKLM
+                               NOPQRSTUVWXYZ"
+    pstr4 PrintableString ::= "'()+,-./:=?"
+END

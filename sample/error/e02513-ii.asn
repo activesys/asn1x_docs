@@ -1,0 +1,6 @@
+E02513-II DEFINITIONS ::=
+BEGIN
+    seqof SEQUENCE OF int INTEGER ::= { -- E02513-II
+        int TRUE, int '1001'H, int 9.0
+    }
+END

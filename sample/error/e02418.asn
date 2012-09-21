@@ -1,0 +1,8 @@
+E02418 DEFINITIONS ::=
+BEGIN
+    Seq ::= SEQUENCE {
+        item1   INTEGER,
+        item2   BOOLEAN
+    }
+    seq Seq ::= {}  -- E02418
+END

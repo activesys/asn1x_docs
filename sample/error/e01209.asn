@@ -1,0 +1,13 @@
+First DEFINITIONS ::=
+BEGIN
+    MyInt ::= INTEGER
+END
+
+E01209 DEFINITIONS ::=
+BEGIN
+IMPORTS
+    MyInt
+    FROM Dummy;         -- E01209
+
+    myInt MyInt ::= 100
+END

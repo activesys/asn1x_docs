@@ -1,0 +1,54 @@
+ChoiceType DEFINITIONS ::=
+BEGIN
+    Cho ::= CHOICE {
+        item1   INTEGER,
+        item2   REAL,
+        item3   ENUMERATED {
+            a, b, c, d
+        },
+        item4   SEQUENCE OF SET {
+            a   BIT STRING,
+            b   NULL,
+            c   BOOLEAN
+        },
+        item5   CHOICE {
+            a   NULL,
+            b   BOOLEAN
+        }
+    }
+
+    cho1 Cho ::= item1 : 100
+    cho2 Cho ::= item2 : 89.0
+    cho3 Cho ::= item3 : c
+    cho4 Cho ::= item4 : {{a '0011'B, b NULL, c FALSE}}
+    cho5 Cho ::= item5 : b : TRUE
+
+    Cho1 ::= CHOICE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...
+    }
+    Cho2 ::= CHOICE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        ...
+    }
+    Cho3 ::= CHOICE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        e   ENUMERATED {a, b, c, ..., d},
+        ...
+    }
+    Cho4 ::= CHOICE {
+        a   INTEGER,
+        b   BOOLEAN,
+        ...,
+        [[--3:
+            r   REAL,
+            n   NULL
+        ]],
+        ...
+    }
+END

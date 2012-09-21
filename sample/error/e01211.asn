@@ -1,0 +1,15 @@
+First {itu-t 1 0 100 1}
+DEFINITIONS ::=
+BEGIN
+    MyInt ::= INTEGER
+END
+
+E01211 DEFINITIONS ::=
+BEGIN
+IMPORTS
+    MyInt
+    FROM First;         -- E01211
+
+    myInt MyInt ::= 100
+END
+

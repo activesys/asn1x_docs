@@ -1,0 +1,7 @@
+E03002-II DEFINITIONS
+::=
+BEGIN
+    Int ::= [APPLICATION -9]INTEGER     -- E03002-II
+    ival INTEGER ::= -4
+    Bool ::= [PRIVATE ival] BOOLEAN     -- E03002-II
+END

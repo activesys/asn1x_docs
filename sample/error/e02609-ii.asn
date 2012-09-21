@@ -1,0 +1,9 @@
+E02609-II DEFINITIONS ::=
+BEGIN
+    set SET {           -- E02609-II
+        item INTEGER
+    } ::= {
+        item  100,
+        item2 200  
+    }
+END

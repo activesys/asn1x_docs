@@ -1,0 +1,14 @@
+Real DEFINITIONS ::=
+BEGIN
+    real1   REAL ::= 3
+    real2   REAL ::= 3.1
+    real3   REAL ::= 3e2    -- 300
+    real4   REAL ::= 3.1E3  -- 3100
+    real5   REAL ::= 3.1e-4 -- 0.00031
+    real6   REAL ::= 3.
+    real7   REAL ::= 3.E8
+    real8   REAL ::= 3.1e0
+    real9   REAL ::= -34.312E9
+    real10  REAL ::= PLUS-INFINITY
+    real11  REAL ::= MINUS-INFINITY
+END

@@ -1,0 +1,23 @@
+First {itu-t 1 0 100 0}
+DEFINITIONS ::=
+BEGIN
+    MyInt ::= INTEGER
+    MyReal ::= REAL 
+END
+
+Imports1 DEFINITIONS ::=
+BEGIN
+IMPORTS
+    MyInt, MyReal
+    FROM First objid;               -- E01208
+
+    objid OBJECT IDENTIFIER ::= {itu-t 1 0 100 9}
+END
+
+Imports2 DEFINITIONS ::=
+BEGIN
+IMPORTS
+    MyInt, MyReal
+    FROM First {itu-t 1 0 100 1};   -- E01208
+END
+

@@ -1,0 +1,7 @@
+E02603 DEFINITIONS ::=
+BEGIN
+    Set ::= SET {
+        item1   INTEGER,
+        item2   INTEGER     -- E02603
+    }
+END

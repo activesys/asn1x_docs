@@ -1,0 +1,12 @@
+BitString DEFINITIONS ::=
+BEGIN
+    BS1 ::= BIT STRING
+
+    intval INTEGER ::= 5
+    BS2 ::= BIT STRING {a(0), b(intval)}
+
+    bs1 BS1 ::= '0011110110111'B
+    bs2 BIT STRING ::= '0123456789ABCDEF'H
+    bs3 BS2 ::= {a, b}
+    bs4 BS2 ::= {}
+END

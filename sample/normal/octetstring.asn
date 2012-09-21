@@ -1,0 +1,6 @@
+OctetString DEFINITIONS ::=
+BEGIN
+    OS ::= OCTET STRING
+    os1 OS ::= '00110011'B
+    os2 OCTET STRING ::= '34BD'H
+END

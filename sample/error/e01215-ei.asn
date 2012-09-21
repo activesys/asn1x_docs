@@ -1,0 +1,15 @@
+First DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 100
+    b REAL ::= 3.14
+END
+
+E01215-EI DEFINITIONS ::=
+BEGIN
+IMPORTS
+    a
+    FROM First
+    b
+    FROM First;     -- E01215-EI
+END
+

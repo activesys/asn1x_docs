@@ -1,0 +1,4 @@
+E01902-II DEFINITIONS ::=
+BEGIN
+    Enum ::= ENUMERATED {a(0), b(0), c(0)}  -- E01902-II
+END

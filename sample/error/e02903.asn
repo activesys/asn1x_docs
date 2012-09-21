@@ -1,0 +1,17 @@
+E02903 DEFINITIONS ::=
+BEGIN
+    Seq1 ::= SEQUENCE {     -- as NamedType
+        item < CHOICE {
+            item INTEGER
+        }
+    }
+    seq1 Seq1 ::= {item 100}
+
+    Seq2 ::= SEQUENCE {     -- as Type
+        a item < CHOICE {
+            item INTEGER
+        }
+    }
+    seq2 Seq2 ::= {a 100}
+    seq3 Seq2 ::= {item 100}    -- ERROR
+END

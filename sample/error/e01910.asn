@@ -1,0 +1,7 @@
+E01910 DEFINITIONS ::=
+BEGIN
+    Enu1 ::= ENUMERATED {a, b, c, d}
+    Enu2 ::= ENUMERATED {x, y, z}
+    enu1 Enu1 ::= f     -- E01910
+    enu2 Enu2 ::= a     -- E01910
+END

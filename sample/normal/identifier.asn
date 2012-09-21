@@ -1,0 +1,6 @@
+Valid-Identifier DEFINITIONS ::=
+BEGIN
+	MyInt ::= INTEGER
+	V3911TU ::= BOOLEAN
+	var-88 INTEGER ::= 88
+END

@@ -1,0 +1,10 @@
+HString DEFINITIONS ::=
+BEGIN
+    hs1 OCTET STRING ::= '0123456789ABCDEF'H
+    hs2 OCTET STRING ::= '0 123 456 789 ABCDEF   'H
+    hs3 OCTET STRING ::= '0123
+456
+                789     ABC
+        DEF'H
+    hs4 OCTET STRING ::= ''H
+END

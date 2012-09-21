@@ -1,0 +1,15 @@
+E02405-1 DEFINITIONS ::=
+BEGIN
+    Seq1 ::= SEQUENCE {
+        item1   INTEGER OPTIONAL,
+        item2   INTEGER             -- E02405-1
+    }
+    Seq2 ::= SEQUENCE {
+        item1   INTEGER DEFAULT 100,
+        item2   INTEGER             -- E02405-1
+    }
+    Seq3 ::= SEQUENCE {
+        item1   INTEGER OPTIONAL,
+        item2   INTEGER OPTIONAL    -- E02405-1
+    }
+END

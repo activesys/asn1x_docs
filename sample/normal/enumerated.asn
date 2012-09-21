@@ -1,0 +1,13 @@
+Enumerated DEFINITIONS ::=
+BEGIN
+    Enu ::= ENUMERATED {abc, def(3), xyz(0), www(-45)}
+    enuvar1 Enu ::= abc
+    enuvar2 Enu ::= xyz
+    enuvar3 Enu ::= enuvar2
+
+    Enu1 ::= ENUMERATED {a, b, c, ..., e, f}
+    Enu2 ::= ENUMERATED {a, b, c(5), ..., e(2), f}
+
+    Enu3 ::= ENUMERATED {a, b, c, ... !100}
+    Enu4 ::= ENUMERATED {a, b, c, ... !200, e, f}
+END

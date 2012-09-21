@@ -1,0 +1,62 @@
+GeneralConstraint
+DEFINITIONS
+AUTOMATIC TAGS
+::=
+BEGIN
+    ENCRYPTED {ToBeEnciphered} ::= BIT STRING (
+        CONSTRAINED BY {
+            ToBeEnciphered
+        }
+        ! Error : securityViolation
+    )
+    Error ::= ENUMERATED {securityViolation}
+
+    ERROR-CLASS ::= CLASS {
+        &category   PrintableString (SIZE(1)),
+        &code       INTEGER,
+        &Type
+    } WITH SYNTAX {
+        &category
+        &code
+        &Type
+    }
+
+    ErrorSet ERROR-CLASS ::= {
+        {"A" 1 INTEGER}          |
+        {"A" 2 REAL}             |
+        {"B" 1 CHARACTER STRING} |
+        {"B" 2 GeneralString}
+    }
+
+    ErrorReturn ::= SEQUENCE {
+        errorCategory   ERROR-CLASS.&category ({ErrorSet}) OPTIONAL,
+        errors          SEQUENCE OF SEQUENCE {
+            errorCode       ERROR-CLASS.&code ({ErrorSet}{@errorCategory}),
+            errorInfo       ERROR-CLASS.&Type ({ErrorSet}{@errorCategory, @.errorCode})
+        } OPTIONAL
+    }
+
+    ERROR ::= CLASS {
+        &severity   INTEGER {a(0), b(1)},
+        &id         INTEGER,
+        &Type
+    }
+
+    Errors ERROR ::= {
+        {&severity a, &id 1, &Type INTEGER} |
+        {&severity a, &id 2, &Type REAL}    |
+        {&severity b, &id 1, &Type BOOLEAN} |
+        {&severity b, &id 2, &Type NULL}
+    }
+
+    ErrorMessage ::= SEQUENCE {
+        severity    ERROR.&severity ({Errors}),
+        parameters  SEQUENCE OF SEQUENCE {
+            errorId     ERROR.&id ({Errors}{@severity}),
+            data        SEQUENCE {
+                value       ERROR.&Type ({Errors}{@severity, @..errorId}),
+                text        VisibleString
+            }
+        }
+    }
+END

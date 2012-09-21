@@ -1,0 +1,5 @@
+Number DEFINITIONS ::=
+BEGIN
+    num0    INTEGER ::= 0
+    num10   INTEGER ::= 10
+END

@@ -1,0 +1,9 @@
+Integer DEFINITIONS ::=
+BEGIN
+    Int1 ::= INTEGER
+    Int2 ::= INTEGER {abc(1), def(2), xyz(100)}
+    Int3 ::= INTEGER {aaa(78), bbb(23), ccc(-98)}
+
+    intvar1 Int1 ::= 100
+    intvar2 Int2 ::= xyz
+END

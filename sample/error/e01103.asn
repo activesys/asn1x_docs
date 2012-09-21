@@ -1,0 +1,11 @@
+E01103 DEFINITIONS ::=
+BEGIN
+	1Int ::= INTEGER    -- E01103
+	-Int ::= INTEGER    -- E01103
+
+	1int INTEGER ::= 33 -- E01103
+	-int INTEGER ::= 23 -- E01103
+
+    Int- ::= INTEGER    -- E01103
+    int- INTEGER ::= 23 -- E01103
+END

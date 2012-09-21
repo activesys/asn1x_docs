@@ -1,0 +1,6 @@
+E03110-N DEFINITIONS ::=
+BEGIN
+    obj OBJECT IDENTIFIER ::= { -- E03110-N
+        iso
+    }
+END

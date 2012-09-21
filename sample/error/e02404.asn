@@ -1,0 +1,7 @@
+E02404 DEFINITIONS ::=
+BEGIN
+    Int ::= INTEGER
+    Seq ::= SEQUENCE {
+        COMPONENTS OF Int   -- E02404
+    }
+END

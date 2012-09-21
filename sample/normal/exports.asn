@@ -1,0 +1,29 @@
+First DEFINITIONS ::=
+BEGIN
+EXPORTS
+    MyInt, abc;
+
+    MyInt ::= INTEGER
+    abc REAL ::= 3.14 
+END
+
+Second DEFINITIONS ::=
+BEGIN
+EXPORTS;
+    MyInt ::= INTEGER
+    abc REAL ::= 3.14
+END
+
+Third DEFINITIONS ::=
+BEGIN
+EXPORTS ALL;
+
+    MyInt ::= INTEGER
+    abc REAL ::= 3.14
+END
+
+Fourth DEFINITIONS ::=
+BEGIN
+    MyInt ::= INTEGER
+    abc REAL ::= 3.14
+END

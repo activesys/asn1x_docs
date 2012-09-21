@@ -1,0 +1,16 @@
+COMMENTS DEFINITIONS ::=
+BEGIN
+	OneLine1 ::= NULL  -- One-line comment.
+	OneLine2 ::= -- Another one line comment. /* no special meaning */-- NULL
+	/*
+	Multiple line comment. -- no special meaning.
+	*/
+	MultiLine1 ::= NULL
+	/*
+		/*
+		Comment.
+		*/
+		Another multiple line comment.
+	*/
+	MultiLine2 ::= NULL
+END

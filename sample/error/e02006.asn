@@ -1,0 +1,4 @@
+E02006 DEFINITIONS ::=
+BEGIN
+    realval REAL ::= -0 -- E02006
+END

@@ -1,0 +1,16 @@
+First DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 100
+END
+
+E01212-AI DEFINITIONS ::=
+BEGIN
+EXPORTS
+    item1, itme2;       -- E01212-AI
+IMPORTS
+    a
+    FROM First;
+
+    MyInt ::= INTEGER
+    abc REAL ::= 3.14
+END

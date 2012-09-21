@@ -1,0 +1,8 @@
+E02901-II DEFINITIONS ::=
+BEGIN
+    Int ::= item < CHOICE { -- E02901-II
+        a   INTEGER,
+        b   REAL,
+        c   NULL
+    }
+END

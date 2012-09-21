@@ -1,0 +1,9 @@
+E02419-III DEFINITIONS ::=
+BEGIN
+    seq SEQUENCE {      -- E02419-III
+        item    INTEGER
+    } ::= {
+        item    100,
+        item1   199
+    }
+END

@@ -1,0 +1,15 @@
+E02808 DEFINITIONS ::=
+BEGIN
+    Set ::= SET {       -- E02808
+        a   A,
+        b   B
+    }
+    A ::= CHOICE {
+        item1   [0] INTEGER,
+        item2   [1] INTEGER
+    }
+    B ::= CHOICE {
+        item3   [0] INTEGER,
+        item4   [1] INTEGER
+    }
+END

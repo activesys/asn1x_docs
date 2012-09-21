@@ -1,0 +1,6 @@
+Null DEFINITIONS ::=
+BEGIN
+    Null ::= NULL
+    val1 Null ::= NULL
+    val2 NULL ::= NULL
+END

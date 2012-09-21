@@ -1,0 +1,9 @@
+BString DEFINITIONS ::=
+BEGIN
+    bs1 BIT STRING ::= '001011001011'B
+    bs2 BIT STRING ::= '00 011 111 00001 1'B
+    bs3 BIT STRING ::= '0011
+00111101011
+                        0011111'B
+    bs5 BIT STRING ::= ''B
+END

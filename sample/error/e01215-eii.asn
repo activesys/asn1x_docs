@@ -1,0 +1,15 @@
+First {itu-t 1 0 100 1}
+DEFINITIONS ::=
+BEGIN
+    a INTEGER ::= 100
+    b REAL ::= 3.14
+END
+
+E01215-EII DEFINITIONS ::=
+BEGIN
+IMPORTS
+    a
+    FROM Dummy1 {itu-t 1 0 100 1}
+    b
+    FROM Dummy2 {itu-t 1 0 100 1};  -- E01215-EII
+END

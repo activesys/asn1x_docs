@@ -1,0 +1,6 @@
+E01802 DEFINITIONS ::=
+BEGIN
+    INT ::= INTEGER {sg(-0)} -- E01802
+
+    intvar INTEGER ::= -0    -- E01802
+END

@@ -1,0 +1,5 @@
+E02104 DEFINITIONS ::=
+BEGIN
+    val INTEGER ::= 1
+    BS ::= BIT STRING {a(0), b(1), c(val)}  -- E02104
+END
